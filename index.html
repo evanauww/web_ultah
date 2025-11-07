@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untuk Kalila ✨</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body class="bg-gradient-to-b from-purple-500 to-pink-500 text-white font-sans">
+
+<!-- Bagian Ucapan -->
+<section class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative overflow-hidden" data-aos="fade-up">
+  <h1 class="text-3xl md:text-5xl font-bold mb-4">✨ Tabarakallah fii umrik Kalila Bil Afwin ✨</h1>
+  <p class="text-base md:text-lg max-w-2xl mb-8">
+    Perjalanan hidup memang tidak mudah, tentu banyak rintangan yang menerpa.  
+    Selamat bertambah usia Kalila — sehat selalu, diberikan keberkahan dan kesuksesan dunia akhirat 💖
+  </p>
+
+<!-- Lagu -->
+<audio id="bgMusic" src="assets/music/Ed Sheeran Cover - Afterglow (Violin, Cello and Piano Cover).mp3" loop></audio>
+
+<!-- Tombol bunga -->
+<button id="flowerBtn"
+  onclick="mulaiMusik()"
+  class="bg-white text-purple-600 font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition">
+  🌸 Klik di sini 🌸
+</button>
+
+<!-- Teks scroll -->
+<div class="absolute bottom-10 text-white opacity-80 flex flex-col items-center animate-bounce">
+  <p class="text-sm mb-1">Scroll ke bawah ya 🌷</p>
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+  </svg>
+</div>
+
+
+  <!-- Tempat efek bunga -->
+  <div id="flowersContainer" class="absolute inset-0 pointer-events-none overflow-hidden"></div>
+</section>
+
+
+<script>
+  function mulaiMusik() {
+    const music = document.getElementById('bgMusic');
+    music.volume = 0.5; // biar lembut
+    music.play().then(() => {
+      console.log("Musik dimulai 🎵");
+    }).catch(err => {
+      console.log("Autoplay diblokir:", err);
+      alert("Klik tombol sekali lagi untuk memulai musik 🎶");
+    });
+
+    // Efek bunga jatuh pas musik mulai
+    for (let i = 0; i < 10; i++) {
+      setTimeout(createFlower, i * 300);
+    }
+  }
+
+  // Efek bunga jatuh
+  function createFlower() {
+    const flower = document.createElement('div');
+    flower.innerHTML = '🌸';
+    flower.classList.add('flower');
+    flower.style.left = Math.random() * 100 + 'vw';
+    flower.style.animationDuration = Math.random() * 3 + 2 + 's';
+    document.body.appendChild(flower);
+    setTimeout(() => flower.remove(), 5000);
+  }
+
+  // CSS bunga
+  const style = document.createElement('style');
+  style.innerHTML = `
+    .flower {
+      position: fixed;
+      top: -2rem;
+      font-size: 1.5rem;
+      animation: fall linear forwards;
+      opacity: 0.9;
+      z-index: 10;
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+</script>
+
+<!-- Bagian Galeri -->
+<section class="bg-white text-gray-800 py-16 space-y-20">
+
+  <!-- Judul Galeri -->
+  <div class="text-center mb-16" data-aos="fade-up">
+    <h2 class="text-4xl font-bold mb-4">📸 Kenangan yang Penuh Cerita</h2>
+    <p class="max-w-2xl mx-auto text-gray-600">
+      Setiap perjalanan yang pernah dilalui menyimpan makna tersendiri, baik suka maupun duka. 
+      Dari setiap langkah kecil itulah lahir banyak pelajaran dan kenangan yang tak terlupakan.
+    </p>
+     <p class="max-w-2xl mx-auto text-gray-600">
+        Ini sedikit pengalaman ku selama menjalani banyaknya perjalnan sendirian menjelajahi hampir setengah pulau jawa, ku ambil beberpa momen indah biar ga cuma aku yang menikmati
+    </p>
+  </div>
+     
+    <!-- Foto 1 -->
+    <div class="container mx-auto flex flex-col md:flex-row items-center px-4" data-aos="fade-right">
+      <img src="assets/image/DSC03507.jpg" alt="foto1" class="w-full md:w-1/2 rounded-2xl shadow-lg">
+      <div class="md:ml-10 mt-6 md:mt-0 text-center md:text-left">
+        <h2 class="text-2xl font-semibold mb-2">Senja kebumen</h2>
+        <p class="text-gray-600">Setiap hal yang pernah dijalani pastinya ga selalu sesuai dengan apa yang kita harapkan, maka dari itu pastinya dari diri sendiri memahami situasi biar engga berharap lebih pada sesuatu, menikmati dan bersyukur tentang apa yang ada itu penting ga peduli sesulit apa itu tetap rezeki, kuncinya apa, BERDOA DAN BERUSAHA</p>
+      </div>
+    </div>
+
+    <!-- Foto 2 -->
+    <div class="container mx-auto flex flex-col md:flex-row-reverse items-center px-4" data-aos="fade-left">
+      <img src="assets/image/DSC07499.jpg" alt="foto2" class="w-full md:w-1/2 rounded-2xl shadow-lg">
+      <div class="md:mr-10 mt-6 md:mt-0 text-center md:text-left">
+        <h2 class="text-2xl font-semibold mb-2">Senja paralayang</h2>
+        <p class="text-gray-600">dari banyaknya perjalanan yang pernah ku lalui, banyak banget rintangannya, tapi mesti selalu kunikmati, apalagi perjalanan indah yang banyak diwarnai oleh kehidupan dewasa sekarang ini, dari sini aku mengerti bahwa, "hidup ga melulu soal cinta yang cuma berdasarkan rasa dari hati, tapi juga usaha yang ada dan diusahakan", ga cuma itu banyak lagi hal yang udah ku lalui yang ada kuncinya cuma 2, BERDOA DAN BERUSAHA</p>
+      </div>
+    </div>
+
+    <!-- Foto 3 -->
+    <div class="container mx-auto flex flex-col md:flex-row items-center px-4" data-aos="fade-right">
+      <img src="assets/image/DSC07563.jpg" alt="foto3" class="w-full md:w-1/2 rounded-2xl shadow-lg">
+      <div class="md:ml-10 mt-6 md:mt-0 text-center md:text-left">
+        <h2 class="text-2xl font-semibold mb-2">Senja kebumen</h2>
+        <p class="text-gray-600">walau hidup ini sulit, dijalani sendiri banyak masalah kembalinya mesti ke allah kan ya, harapanku berjalanlah sesuai apa yang kita inginkan tapi jangan lupa prinsip hidup yang udah dibuat, tentunya makin dewasa ini kita punya prinsip hidup yang kita bikin biar hidup kita jadi lebih baik, tapi kembali lagi apa yang harus dilakukan yakkk, BERDOA DAN BERUSAHA</p>
+      </div>
+    </div>
+
+    <!-- Foto 4 -->
+    <div class="container mx-auto flex flex-col md:flex-row-reverse items-center px-4" data-aos="fade-left">
+      <img src="assets/image/DSC08545.jpg" alt="foto4" class="w-full md:w-1/2 rounded-2xl shadow-lg">
+      <div class="md:mr-10 mt-6 md:mt-0 text-center md:text-left">
+        <h2 class="text-2xl font-semibold mb-2">Senja gunung kidul</h2>
+        <p class="text-gray-600">karena dalam kehidupan yang cuma sekali ini jangan jadikan semuanya kurang sempurna karena tingkah laku yang seharusnya engga dilakukan yakan, jadi tetaplah berjalan sesuai yang kamu inginkan, tapi ingat walau kita pernah melakukan kesalahan jangan jadikan hal itu sebagai kelemahan tapi untuk berbenah dan apa ya, JANGAN LUPA BERDOA DAN BERUSAHA</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bagian Deskripsi Penutup -->
+  <section class="bg-gradient-to-b from-pink-500 to-purple-600 text-white text-center py-20 px-6" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-4">Sedikit Ucapan dariku</h2>
+    <p class="max-w-2xl mx-auto text-lg">Mungkin ucapan ultah kali ini rada beda ya, dari sini aku cuma pengen berbagi pengalamanku yang udah sampai di titik ini, mungkin belum seberapa,tapi aku harap kamu juga tetap berkembang dan pastinya bisa mencapai semua hal yang ingin kamu capai dalam waktu dekat ataupun jauh.</p>
+    <p class="max-w-2xl font-semibold mx-auto text-lg">Tetap Semangat Jangan Menyerah, Jangan Lupa Berdoa Dan</p>
+  </section>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Tambahkan script di bawah AOS.init() -->
+<script>
+  AOS.init();
+
+  const flowerBtn = document.getElementById("flowerBtn");
+  const flowersContainer = document.getElementById("flowersContainer");
+  const flowers = ["🌸", "🌼", "🌷", "💐", "🌻"];
+
+  flowerBtn.addEventListener("click", () => {
+    for (let i = 0; i < 15; i++) {
+      const flower = document.createElement("span");
+      flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+      flower.style.position = "absolute";
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.fontSize = Math.random() * 24 + 16 + "px";
+      flower.style.animation = "fall " + (3 + Math.random() * 2) + "s linear forwards";
+      flowersContainer.appendChild(flower);
+
+      // Hapus bunga setelah animasi selesai
+      setTimeout(() => flower.remove(), 5000);
+    }
+  });
+</script>
+<!-- Tombol menuju halaman penutup -->
+<div class="text-center mt-10 mb-8">
+  <button 
+    onclick="window.location.href='end.html'" 
+    class="bg-purple-600 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition">
+    💫 Lanjut ke Penutup 💫
+  </button>
+</div>
+
+</body>
+</html>
